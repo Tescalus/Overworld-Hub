@@ -1,103 +1,135 @@
---Overworld reanimation open sourced because its not good but at least its something
+--Thanks charlie for fixing it
+--Also open sourced so u can take a look at it!
 
--- Attachments
 
-local function Align(P0,P1,Position,Rotate)
-local AlignPosition = Instance.new("AlignPosition", P0)
-local AlignOrientation = Instance.new("AlignOrientation", P0)
-local Attachment1 = Instance.new("Attachment", P0)
-local Attachment2 = Instance.new("Attachment", P1)
+local Velocity = Vector3.new(35, 0, 0)
 
--- Main Attach
+-- End of "Settings"
 
-AlignPosition.Attachment0,AlignPosition.Attachment1 = Attachment1,Attachment2 -- Shortcut
-AlignOrientation.Attachment0,AlignOrientation.Attachment1 = Attachment1,Attachment2 -- Shortcut
+local Players = game:GetService('Players')
 
--- Properties:
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
 
-AlignPosition.RigidityEnabled = true
-AlignOrientation.RigidityEnabled = true
+-- End of "Services"
 
--- Rotate/Position
+function Align(P0, P1, Position, Rotate)
+    local AlignPosition = Instance.new("AlignPosition", P0)
+    local AlignOrientation = Instance.new("AlignOrientation", P0)
+    
+    local Attachment1 = Instance.new("Attachment", P0)
+    local Attachment2 = Instance.new("Attachment", P1)
 
-Attachment1.Position = Position or Vector3.new(0,0,0)
-Attachment1.Rotation = Rotate or Vector3.new(0,0,0)
+    AlignPosition.Attachment0, AlignPosition.Attachment1 = Attachment1, Attachment2 
+    AlignOrientation.Attachment0, AlignOrientation.Attachment1 = Attachment1, Attachment2
+
+    AlignPosition.RigidityEnabled = true
+    AlignOrientation.RigidityEnabled = true
+
+    Attachment1.Position = Position or Vector3.new()
+    Attachment1.Rotation = Rotate or Vector3.new()
 end
 
---Shortcuts
+function Net(Part)
 
-local Player = game.Players.LocalPlayer
-local Char = Player.Character
-
---making character archivable and cloning it
-Char.Archivable = true
-
-Overworld = Char:Clone()
-Overworld.Parent = Char
-Overworld.Name = "Old Character"
-
---Making ur old character invisible
-
-for i,v in pairs(Overworld:GetChildren()) do 
-	if v:IsA("BasePart") then v.Transparency = 1
-	elseif 
-	    v:IsA("Accessory") then v:Destroy()
-	end
-end
-
---wow no clip
-
-game:GetService("RunService").Stepped:Connect(function()
-    Humanoid.Died:Connect(function()
-        return -- Breaks the script, function 'break' will not work on runservices idk why.
+    if typeof(Part) ~= 'Instance' then return end
+    if not Part:IsA('BasePart') then return end
+    
+    RunService.Heartbeat:Connect(function()
+        Part.Velocity = Velocity
     end)
-    for i,v in pairs(Char:GetChildren()) do
-        Overworld.Humanoid:Move(Char.Humanoid.MoveDirection)
-        if v:IsA("BasePart") then
-            v.CanCollide = false
+end
+
+-- End of "Alignment Functions"
+
+local LocalPlayer = Players.LocalPlayer
+
+local Character = LocalPlayer.Character; Character.Archivable = true
+local Humanoid = Character:FindFirstChild("Humanoid")
+
+if Character:FindFirstChild('Animate') then
+    Character:FindFirstChild('Animate').Disabled = true
+end
+
+local Tracks = Humanoid and Humanoid:GetPlayingAnimationTracks() or {}
+for _, Track in pairs(Tracks) do
+    Track:Stop()
+end
+
+local Dummy = Character:Clone()
+
+Humanoid.AutoRotate = false
+Humanoid.AutoJumpEnabled = false
+
+Humanoid.WalkSpeed = 0
+Humanoid.JumpPower = 0
+
+Dummy.Name = "Dummy"
+Dummy.Parent = Character
+
+-- Making your old character no longer show up
+
+for _, Object in pairs(Dummy:GetDescendants()) do 
+    if Object:IsA("BasePart") then 
+        Object.Transparency = 1
+    elseif Object:IsA("Accessory") or Object:IsA('Decal') or Object:IsA('Texture') or Object:IsA('ForceField') then 
+        Object:Destroy()
+    end
+end
+
+-- Noclip to prevent being flung
+
+local NoclipConnection; NoclipConnection = RunService.Stepped:Connect(function()
+    if not Character:IsDescendantOf(game) or not Dummy:IsDescendantOf(game) then
+        NoclipConnection:Disconnect()
+        
+        return
+    end
+    
+    for _, Object in pairs(Character:GetChildren()) do
+        if Object:IsA("BasePart") then
+            Object.CanCollide = false
         end
     end
 end)
 
-game:GetService("UserInputService").JumpRequest:Connect(function()
-	Overworld.Humanoid.Jump = true
-	Overworld.Humanoid.Sit = false
+UserInputService.JumpRequest:Connect(function()
+    Dummy.Humanoid.Sit = false
+    Dummy.Humanoid.Jump = true
 end)
 
---Attaching the bodyparts
+-- BodyPart alignment
 
-Char.Torso["Left Hip"]:Destroy()
-Char.Torso["Right Hip"]:Destroy()
-Char.Torso["Left Shoulder"]:Destroy()
-Char.Torso["Right Shoulder"]:Destroy()
-Char.HumanoidRootPart:Destroy()
-function InstantAttach(P0)
-    Align(Char[P0],Overworld[P0])
+Character.Torso["Left Hip"]:Destroy()
+Character.Torso["Right Hip"]:Destroy()
+Character.Torso["Left Shoulder"]:Destroy()
+Character.Torso["Right Shoulder"]:Destroy()
+
+function Connect(Name)
+    Net(Character[Name])
+    Align(Character[Name], Dummy[Name])
 end
-InstantAttach("Right Arm")
-InstantAttach("Left Arm")
-InstantAttach("Right Leg")
-InstantAttach("Left Leg")
-InstantAttach("Torso")
 
+Connect("Right Arm")
+Connect("Left Arm")
+Connect("Right Leg")
+Connect("Left Leg")
 
--- Netless (velocity)
+Align(Character.HumanoidRootPart, Dummy.Torso)
 
-game:GetService("RunService").Heartbeat:Connect(function()
-    for i,v in pairs(Character:GetChildren()) do
-        if v:IsA("BasePart") then v.Velocity = _G.Velocity elseif v:IsA("Accessory") then v.Handle.Velocity = _G.Velocity end
+RunService.Stepped:Connect(function()
+    local Humanoid = Character:FindFirstChildOfClass('Humanoid')
+    if Humanoid then
+        Humanoid.Sit = false
     end
 end)
 
--- 
-
-game.Players.LocalPlayer.Character = Overworld
-game.Players.LocalPlayer.Character.Humanoid.Died:Connect(function()
-Character.Humanoid:ChangeState(15) --makes ur hum die
-game.Players.LocalPlayer.Character = workspace[game.Players.LocalPlayer.Name]
-Overworld:Destroy()
+LocalPlayer.Character = Dummy
+Dummy.Humanoid.Died:Connect(function()
+    Character.Humanoid:ChangeState(15)
+    
+    LocalPlayer.Character = Character
+    Dummy:Destroy()
 end)
--- Camera
-workspace:FindFirstChildOfClass("Camera").CameraSubject = Overworld.Humanoid
-wait(0.1)
-print("Overworld Reanimation Loaded!")
+
+workspace.CurrentCamera.CameraSubject = Dummy.Humanoid
