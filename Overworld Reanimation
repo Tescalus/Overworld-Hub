@@ -2,7 +2,7 @@
 --Also open sourced so u can take a look at it!
 
 
-local Velocity = Vector3.new(35, 0, 0)
+local Velocity = Vector3.new(0, 20, 0)
 
 -- End of "Settings"
 
