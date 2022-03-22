@@ -2,7 +2,7 @@
 --Also open sourced so u can take a look at it!
 
 
-local Velocity = Vector3.new(0, 20, 0)
+local Velocity = Vector3.new(0, 30, 0)
 
 -- End of "Settings"
 
@@ -47,14 +47,7 @@ local LocalPlayer = Players.LocalPlayer
 local Character = LocalPlayer.Character; Character.Archivable = true
 local Humanoid = Character:FindFirstChild("Humanoid")
 
-if Character:FindFirstChild('Animate') then
-    Character:FindFirstChild('Animate').Disabled = true
-end
 
-local Tracks = Humanoid and Humanoid:GetPlayingAnimationTracks() or {}
-for _, Track in pairs(Tracks) do
-    Track:Stop()
-end
 
 local Dummy = Character:Clone()
 
