@@ -1,0 +1,967 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local Overworld = Instance.new("ScreenGui")
+local DragFrame = Instance.new("Frame")
+local Tabs = Instance.new("Frame")
+local Home = Instance.new("Frame")
+local HomeScroll = Instance.new("ScrollingFrame")
+local WELImage = Instance.new("ImageLabel")
+local WELCorner = Instance.new("UICorner")
+local WELCOME = Instance.new("TextLabel")
+local PlayerName = Instance.new("TextLabel")
+local Aboutus = Instance.new("TextLabel")
+local AboutUsF = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local ABTUSText = Instance.new("TextLabel")
+local Updates = Instance.new("TextLabel")
+local UpdatesF = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local UpdatesText = Instance.new("TextLabel")
+local Reanimate = Instance.new("TextLabel")
+local ReanimateF = Instance.new("Frame")
+local UICorner_3 = Instance.new("UICorner")
+local ReanimateText = Instance.new("TextLabel")
+local TextLabel = Instance.new("TextLabel")
+local Status = Instance.new("TextLabel")
+local StatusF = Instance.new("Frame")
+local UICorner_4 = Instance.new("UICorner")
+local Broken = Instance.new("TextLabel")
+local Buggy = Instance.new("TextLabel")
+local Working = Instance.new("TextLabel")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local Working_2 = Instance.new("TextLabel")
+local Working_3 = Instance.new("TextLabel")
+local Updates_2 = Instance.new("TextLabel")
+local UpdatesF_2 = Instance.new("Frame")
+local UICorner_5 = Instance.new("UICorner")
+local UpdatesText_2 = Instance.new("TextLabel")
+local Overworld_2 = Instance.new("TextLabel")
+local Home_2 = Instance.new("TextLabel")
+local Home_3 = Instance.new("TextLabel")
+local PlayerInfo = Instance.new("Frame")
+local PCorner = Instance.new("UICorner")
+local PlayerAV = Instance.new("ImageLabel")
+local UICorner_6 = Instance.new("UICorner")
+local PlayerName_2 = Instance.new("TextLabel")
+local PlayerID = Instance.new("TextLabel")
+local BHome = Instance.new("TextButton")
+local Line = Instance.new("Frame")
+local BScripts = Instance.new("TextButton")
+local Line_2 = Instance.new("Frame")
+local UICorner_7 = Instance.new("UICorner")
+local BCredits = Instance.new("TextButton")
+local Line_3 = Instance.new("Frame")
+local Scripts = Instance.new("Frame")
+local ScriptsScroll = Instance.new("ScrollingFrame")
+local ScriptsImag = Instance.new("ImageLabel")
+local WELCOME_2 = Instance.new("TextLabel")
+local toconvsec = Instance.new("TextLabel")
+local Overworld_3 = Instance.new("TextLabel")
+local Scripts_2 = Instance.new("TextLabel")
+local Beta = Instance.new("TextLabel")
+local ReanimateF_2 = Instance.new("Frame")
+local LowerF = Instance.new("Frame")
+local Description = Instance.new("TextLabel")
+local Execute = Instance.new("TextButton")
+local Name = Instance.new("TextLabel")
+local Desc = Instance.new("TextLabel")
+local WARNING = Instance.new("TextLabel")
+local WARNF = Instance.new("Frame")
+local UICorner_8 = Instance.new("UICorner")
+local WARNTXT = Instance.new("TextLabel")
+local Credits = Instance.new("Frame")
+local CreditsScroll = Instance.new("ScrollingFrame")
+local CreditsImag = Instance.new("ImageLabel")
+local Overworld_4 = Instance.new("TextLabel")
+local Credits_2 = Instance.new("TextLabel")
+local Beta_2 = Instance.new("TextLabel")
+local Credits_3 = Instance.new("TextLabel")
+local CreditsF = Instance.new("Frame")
+local CreditsTXT = Instance.new("TextLabel")
+local UICorner_9 = Instance.new("UICorner")
+local CreditsFrame = Instance.new("Frame")
+local Credits_4 = Instance.new("TextLabel")
+local UICorner_10 = Instance.new("UICorner")
+local CreditsFrame_2 = Instance.new("Frame")
+local Credits_5 = Instance.new("TextLabel")
+local Credits_6 = Instance.new("TextLabel")
+local UICorner_11 = Instance.new("UICorner")
+
+--Properties:
+
+Overworld.Name = "Overworld"
+Overworld.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Overworld.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Overworld.ResetOnSpawn = false
+
+DragFrame.Name = "DragFrame"
+DragFrame.Parent = Overworld
+DragFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DragFrame.BackgroundTransparency = 1.000
+DragFrame.Position = UDim2.new(0.0891927108, 0, 0, 0)
+DragFrame.Size = UDim2.new(0, 1079, 0, 611)
+
+Tabs.Name = "Tabs"
+Tabs.Parent = DragFrame
+Tabs.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+Tabs.BorderColor3 = Color3.fromRGB(35, 35, 35)
+Tabs.Position = UDim2.new(-0.103116564, 0, 0.0121123316, 0)
+Tabs.Size = UDim2.new(0, 236, 0, 420)
+
+Home.Name = "Home"
+Home.Parent = Tabs
+Home.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+Home.BorderColor3 = Color3.fromRGB(27, 27, 27)
+Home.Position = UDim2.new(1.00314856, 0, 0, 0)
+Home.Size = UDim2.new(0, 636, 0, 420)
+
+HomeScroll.Name = "HomeScroll"
+HomeScroll.Parent = Home
+HomeScroll.Active = true
+HomeScroll.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+HomeScroll.BorderColor3 = Color3.fromRGB(27, 27, 27)
+HomeScroll.Position = UDim2.new(-0.00157232699, 0, 0, 0)
+HomeScroll.Size = UDim2.new(0, 636, 0, 420)
+HomeScroll.CanvasPosition = Vector2.new(0, 300)
+HomeScroll.ScrollBarThickness = 8
+
+WELImage.Name = "WELImage"
+WELImage.Parent = HomeScroll
+WELImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WELImage.BackgroundTransparency = 1.000
+WELImage.Position = UDim2.new(0.0172955971, 0, 0.0464285761, 0)
+WELImage.Size = UDim2.new(0, 613, 0, 206)
+WELImage.Image = "rbxassetid://9134503804"
+
+WELCorner.CornerRadius = UDim.new(0.0299999993, 0)
+WELCorner.Name = "WELCorner"
+WELCorner.Parent = WELImage
+
+WELCOME.Name = "WELCOME"
+WELCOME.Parent = WELImage
+WELCOME.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WELCOME.BackgroundTransparency = 1.000
+WELCOME.Position = UDim2.new(0.00978792831, 0, 0.378640771, 0)
+WELCOME.Size = UDim2.new(0, 200, 0, 50)
+WELCOME.Font = Enum.Font.SourceSansBold
+WELCOME.Text = "Welcome,"
+WELCOME.TextColor3 = Color3.fromRGB(255, 255, 255)
+WELCOME.TextSize = 50.000
+
+PlayerName.Name = "PlayerName"
+PlayerName.Parent = WELImage
+PlayerName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PlayerName.BackgroundTransparency = 1.000
+PlayerName.Position = UDim2.new(0.11582382, 0, 0.58252424, 0)
+PlayerName.Size = UDim2.new(0, 200, 0, 71)
+PlayerName.Font = Enum.Font.SourceSansBold
+PlayerName.TextColor3 = Color3.fromRGB(255, 255, 255)
+PlayerName.TextSize = 75.000
+
+Aboutus.Name = "About us"
+Aboutus.Parent = WELImage
+Aboutus.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Aboutus.BackgroundTransparency = 1.000
+Aboutus.Position = UDim2.new(-0.081566073, 0, 0.956310689, 0)
+Aboutus.Size = UDim2.new(0, 200, 0, 50)
+Aboutus.Font = Enum.Font.SourceSansBold
+Aboutus.Text = "Abous Us"
+Aboutus.TextColor3 = Color3.fromRGB(255, 255, 255)
+Aboutus.TextSize = 30.000
+
+AboutUsF.Name = "AboutUsF"
+AboutUsF.Parent = Aboutus
+AboutUsF.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+AboutUsF.BorderColor3 = Color3.fromRGB(27, 42, 5334)
+AboutUsF.Position = UDim2.new(0.25, 0, 0.839999974, 0)
+AboutUsF.Size = UDim2.new(0, 360, 0, 65)
+
+UICorner.CornerRadius = UDim.new(0.0399999991, 0)
+UICorner.Parent = AboutUsF
+
+ABTUSText.Name = "ABTUSText"
+ABTUSText.Parent = AboutUsF
+ABTUSText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ABTUSText.BackgroundTransparency = 1.000
+ABTUSText.Position = UDim2.new(-0.00101055566, 0, -5.29032259e-05, 0)
+ABTUSText.Size = UDim2.new(0, 360, 0, 57)
+ABTUSText.Font = Enum.Font.SourceSans
+ABTUSText.Text = "Overworld Is A New Roblox Exploting Hub in Early Development and our Goal is to make A good Looking Respectable Hub!"
+ABTUSText.TextColor3 = Color3.fromRGB(255, 255, 255)
+ABTUSText.TextScaled = true
+ABTUSText.TextSize = 30.000
+ABTUSText.TextWrapped = true
+
+Updates.Name = "Updates"
+Updates.Parent = WELImage
+Updates.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Updates.BackgroundTransparency = 1.000
+Updates.Position = UDim2.new(-0.081566073, 0, 1.43689311, 0)
+Updates.Size = UDim2.new(0, 200, 0, 50)
+Updates.Font = Enum.Font.SourceSansBold
+Updates.Text = "Updates"
+Updates.TextColor3 = Color3.fromRGB(255, 255, 255)
+Updates.TextSize = 30.000
+
+UpdatesF.Name = "UpdatesF"
+UpdatesF.Parent = Updates
+UpdatesF.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+UpdatesF.BorderColor3 = Color3.fromRGB(27, 42, 5334)
+UpdatesF.Position = UDim2.new(0.25, 0, 0.839999974, 0)
+UpdatesF.Size = UDim2.new(0, 195, 0, 106)
+
+UICorner_2.CornerRadius = UDim.new(0.0399999991, 0)
+UICorner_2.Parent = UpdatesF
+
+UpdatesText.Name = "UpdatesText"
+UpdatesText.Parent = UpdatesF
+UpdatesText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+UpdatesText.BackgroundTransparency = 1.000
+UpdatesText.Position = UDim2.new(-0.164102569, 0, -0.0965720117, 0)
+UpdatesText.Size = UDim2.new(0, 259, 0, 116)
+UpdatesText.Font = Enum.Font.SourceSans
+UpdatesText.Text = "Important Updates\\n-Remade Ui\\n-Added Player Info\\nFuture Updates\\n-Gonna add Scripts soon\\n"
+UpdatesText.TextColor3 = Color3.fromRGB(255, 255, 255)
+UpdatesText.TextSize = 25.000
+UpdatesText.TextWrapped = true
+
+Reanimate.Name = "Reanimate"
+Reanimate.Parent = WELImage
+Reanimate.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Reanimate.BackgroundTransparency = 1.000
+Reanimate.Position = UDim2.new(0.270799339, 0, 1.43203878, 0)
+Reanimate.Size = UDim2.new(0, 200, 0, 50)
+Reanimate.Font = Enum.Font.SourceSansBold
+Reanimate.Text = "Reanimate"
+Reanimate.TextColor3 = Color3.fromRGB(255, 255, 255)
+Reanimate.TextSize = 30.000
+
+ReanimateF.Name = "ReanimateF"
+ReanimateF.Parent = Reanimate
+ReanimateF.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+ReanimateF.BorderColor3 = Color3.fromRGB(27, 42, 5334)
+ReanimateF.Position = UDim2.new(0.200000003, 0, 0.839999974, 0)
+ReanimateF.Size = UDim2.new(0, 154, 0, 271)
+
+UICorner_3.CornerRadius = UDim.new(0.0399999991, 0)
+UICorner_3.Parent = ReanimateF
+
+ReanimateText.Name = "ReanimateText"
+ReanimateText.Parent = ReanimateF
+ReanimateText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ReanimateText.BackgroundTransparency = 1.000
+ReanimateText.Position = UDim2.new(0.0259740259, 0, -0.132841334, 0)
+ReanimateText.Size = UDim2.new(0, 145, 0, 312)
+ReanimateText.Font = Enum.Font.SourceSans
+ReanimateText.Text = "Overworld Reanimation was made By Emper and fixed By charlie big thanks to him! Overworld reanimation type: Simple Planning to add Permanent Death in the Future"
+ReanimateText.TextColor3 = Color3.fromRGB(255, 255, 255)
+ReanimateText.TextSize = 22.000
+ReanimateText.TextWrapped = true
+
+TextLabel.Parent = ReanimateText
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(-0.37931034, 0, 0.877551019, 0)
+TextLabel.Size = UDim2.new(0, 200, 0, 50)
+TextLabel.Font = Enum.Font.SourceSansBold
+TextLabel.Text = "Status: Working"
+TextLabel.TextColor3 = Color3.fromRGB(0, 253, 16)
+TextLabel.TextSize = 14.000
+
+Status.Name = "Status"
+Status.Parent = WELImage
+Status.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Status.BackgroundTransparency = 1.000
+Status.Position = UDim2.new(0.46655792, 0, 0.95631063, 0)
+Status.Size = UDim2.new(0, 244, 0, 50)
+Status.Font = Enum.Font.SourceSansBold
+Status.Text = "Status"
+Status.TextColor3 = Color3.fromRGB(255, 255, 255)
+Status.TextSize = 30.000
+
+StatusF.Name = "Status F"
+StatusF.Parent = Status
+StatusF.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+StatusF.BorderColor3 = Color3.fromRGB(27, 42, 5334)
+StatusF.Position = UDim2.new(0.352131069, 0, 0.860000312, 0)
+StatusF.Size = UDim2.new(0, 247, 0, 368)
+
+UICorner_4.CornerRadius = UDim.new(0.0250000004, 0)
+UICorner_4.Parent = StatusF
+
+Broken.Name = "Broken"
+Broken.Parent = StatusF
+Broken.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Broken.BackgroundTransparency = 1.000
+Broken.Position = UDim2.new(-0.11242865, 0, 0.0190217383, 0)
+Broken.Size = UDim2.new(0, 200, 0, 32)
+Broken.Font = Enum.Font.SourceSansBold
+Broken.Text = "🔴 = Broken"
+Broken.TextColor3 = Color3.fromRGB(255, 0, 0)
+Broken.TextSize = 30.000
+Broken.TextWrapped = true
+
+Buggy.Name = "Buggy"
+Buggy.Parent = StatusF
+Buggy.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Buggy.BackgroundTransparency = 1.000
+Buggy.Position = UDim2.new(-0.178425536, 0, 0.116847828, 0)
+Buggy.Size = UDim2.new(0, 219, 0, 30)
+Buggy.Font = Enum.Font.SourceSansBold
+Buggy.Text = "🟡 = Buggy"
+Buggy.TextColor3 = Color3.fromRGB(255, 240, 26)
+Buggy.TextSize = 30.000
+Buggy.TextWrapped = true
+
+Working.Name = "Working"
+Working.Parent = StatusF
+Working.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Working.BackgroundTransparency = 1.000
+Working.Position = UDim2.new(-0.111344442, 0, 0.214673907, 0)
+Working.Size = UDim2.new(0, 207, 0, 27)
+Working.Font = Enum.Font.SourceSansBold
+Working.Text = "🟢 = Working"
+Working.TextColor3 = Color3.fromRGB(118, 188, 64)
+Working.TextSize = 30.000
+Working.TextWrapped = true
+
+ScrollingFrame.Parent = StatusF
+ScrollingFrame.Active = true
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+ScrollingFrame.BorderColor3 = Color3.fromRGB(27, 27, 27)
+ScrollingFrame.Position = UDim2.new(0.0323886648, 0, 0.320652187, 0)
+ScrollingFrame.Size = UDim2.new(0, 226, 0, 241)
+
+Working_2.Name = "Working"
+Working_2.Parent = ScrollingFrame
+Working_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Working_2.BackgroundTransparency = 1.000
+Working_2.Position = UDim2.new(-0.175745577, 0, 0.0584239215, 0)
+Working_2.Size = UDim2.new(0, 207, 0, 27)
+Working_2.Font = Enum.Font.SourceSans
+Working_2.Text = "🟢   Scripts"
+Working_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Working_2.TextSize = 30.000
+Working_2.TextWrapped = true
+
+Working_3.Name = "Working"
+Working_3.Parent = ScrollingFrame
+Working_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Working_3.BackgroundTransparency = 1.000
+Working_3.Position = UDim2.new(-0.037717551, 0, 0.0122282607, 0)
+Working_3.Size = UDim2.new(0, 207, 0, 27)
+Working_3.Font = Enum.Font.SourceSans
+Working_3.Text = "🟢   Reanimation"
+Working_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+Working_3.TextSize = 30.000
+Working_3.TextWrapped = true
+
+Updates_2.Name = "Updates"
+Updates_2.Parent = WELImage
+Updates_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Updates_2.BackgroundTransparency = 1.000
+Updates_2.Position = UDim2.new(-0.081566073, 0, 2.09708714, 0)
+Updates_2.Size = UDim2.new(0, 200, 0, 50)
+Updates_2.Font = Enum.Font.SourceSansBold
+Updates_2.Text = "Scripts"
+Updates_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Updates_2.TextSize = 30.000
+
+UpdatesF_2.Name = "UpdatesF"
+UpdatesF_2.Parent = Updates_2
+UpdatesF_2.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+UpdatesF_2.BorderColor3 = Color3.fromRGB(27, 42, 5334)
+UpdatesF_2.Position = UDim2.new(0.25, 0, 0.860000014, 0)
+UpdatesF_2.Size = UDim2.new(0, 195, 0, 133)
+
+UICorner_5.CornerRadius = UDim.new(0.0399999991, 0)
+UICorner_5.Parent = UpdatesF_2
+
+UpdatesText_2.Name = "UpdatesText"
+UpdatesText_2.Parent = UpdatesF_2
+UpdatesText_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+UpdatesText_2.BackgroundTransparency = 1.000
+UpdatesText_2.Position = UDim2.new(0.000857622188, 0, 0.0394383483, 0)
+UpdatesText_2.Size = UDim2.new(0, 194, 0, 127)
+UpdatesText_2.Font = Enum.Font.SourceSans
+UpdatesText_2.Text = "Scripts Are gonna Be Converts and they will be coming soon: If Any Bugs Occurs: DM The Owner or Support If there Is"
+UpdatesText_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+UpdatesText_2.TextScaled = true
+UpdatesText_2.TextSize = 30.000
+UpdatesText_2.TextWrapped = true
+
+Overworld_2.Name = "Overworld"
+Overworld_2.Parent = HomeScroll
+Overworld_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Overworld_2.BackgroundTransparency = 1.000
+Overworld_2.Position = UDim2.new(-0.023584906, 0, -0.00952380989, 0)
+Overworld_2.Size = UDim2.new(0, 200, 0, 50)
+Overworld_2.Font = Enum.Font.SourceSansBold
+Overworld_2.Text = "Overworld "
+Overworld_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Overworld_2.TextSize = 35.000
+
+Home_2.Name = "Home"
+Home_2.Parent = HomeScroll
+Home_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Home_2.BackgroundTransparency = 1.000
+Home_2.Position = UDim2.new(0.742138386, 0, -0.00952380989, 0)
+Home_2.Size = UDim2.new(0, 200, 0, 50)
+Home_2.Font = Enum.Font.SourceSansBold
+Home_2.Text = "Home"
+Home_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Home_2.TextSize = 45.000
+
+Home_3.Name = "Home"
+Home_3.Parent = HomeScroll
+Home_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Home_3.BackgroundTransparency = 1.000
+Home_3.Position = UDim2.new(0.141509444, 0, -0.010714286, 0)
+Home_3.Size = UDim2.new(0, 200, 0, 50)
+Home_3.Font = Enum.Font.SciFi
+Home_3.Text = "Beta"
+Home_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+Home_3.TextSize = 35.000
+
+PlayerInfo.Name = "PlayerInfo"
+PlayerInfo.Parent = Tabs
+PlayerInfo.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+PlayerInfo.BorderColor3 = Color3.fromRGB(27, 27, 27)
+PlayerInfo.Position = UDim2.new(0.0296610165, 0, 0.0142857144, 0)
+PlayerInfo.Size = UDim2.new(0, 221, 0, 81)
+
+PCorner.CornerRadius = UDim.new(0.0250000004, 0)
+PCorner.Name = "PCorner"
+PCorner.Parent = PlayerInfo
+
+PlayerAV.Name = "PlayerAV"
+PlayerAV.Parent = PlayerInfo
+PlayerAV.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PlayerAV.Position = UDim2.new(0.0414870605, 0, 0.0575863607, 0)
+PlayerAV.Size = UDim2.new(0, 64, 0, 62)
+PlayerAV.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
+
+UICorner_6.CornerRadius = UDim.new(1, 8)
+UICorner_6.Parent = PlayerAV
+
+PlayerName_2.Name = "PlayerName"
+PlayerName_2.Parent = PlayerInfo
+PlayerName_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PlayerName_2.BackgroundTransparency = 1.000
+PlayerName_2.Position = UDim2.new(0.180589497, 0, -0.173199117, 0)
+PlayerName_2.Size = UDim2.new(0, 200, 0, 71)
+PlayerName_2.Font = Enum.Font.SourceSansBold
+PlayerName_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+PlayerName_2.TextSize = 30.000
+
+PlayerID.Name = "PlayerID"
+PlayerID.Parent = PlayerInfo
+PlayerID.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PlayerID.BackgroundTransparency = 1.000
+PlayerID.Position = UDim2.new(0.0946166515, 0, 0.123097181, 0)
+PlayerID.Size = UDim2.new(0, 200, 0, 71)
+PlayerID.Font = Enum.Font.SourceSans
+PlayerID.TextColor3 = Color3.fromRGB(255, 255, 255)
+PlayerID.TextSize = 20.000
+
+BHome.Name = "BHome"
+BHome.Parent = Tabs
+BHome.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+BHome.BorderColor3 = Color3.fromRGB(27, 27, 27)
+BHome.Position = UDim2.new(0.0296610165, 0, 0.233333334, 0)
+BHome.Size = UDim2.new(0, 219, 0, 46)
+BHome.Font = Enum.Font.SourceSansBold
+BHome.Text = "Home"
+BHome.TextColor3 = Color3.fromRGB(255, 255, 255)
+BHome.TextSize = 27.000
+
+Line.Name = "Line"
+Line.Parent = BHome
+Line.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+Line.BorderColor3 = Color3.fromRGB(40, 40, 40)
+Line.Position = UDim2.new(0, 0, 1, 0)
+Line.Size = UDim2.new(0, 220, 0, 0)
+
+BScripts.Name = "BScripts"
+BScripts.Parent = Tabs
+BScripts.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+BScripts.BorderColor3 = Color3.fromRGB(27, 27, 27)
+BScripts.Position = UDim2.new(0.0296610165, 0, 0.378571451, 0)
+BScripts.Size = UDim2.new(0, 219, 0, 46)
+BScripts.Font = Enum.Font.SourceSansBold
+BScripts.Text = "Scripts"
+BScripts.TextColor3 = Color3.fromRGB(255, 255, 255)
+BScripts.TextSize = 27.000
+
+Line_2.Name = "Line"
+Line_2.Parent = BScripts
+Line_2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Line_2.BorderColor3 = Color3.fromRGB(40, 40, 40)
+Line_2.Position = UDim2.new(0, 0, 1, 0)
+Line_2.Size = UDim2.new(0, 220, 0, 0)
+
+UICorner_7.Parent = BScripts
+
+BCredits.Name = "BCredits"
+BCredits.Parent = Tabs
+BCredits.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+BCredits.BorderColor3 = Color3.fromRGB(27, 27, 27)
+BCredits.Position = UDim2.new(0.0296610165, 0, 0.526190519, 0)
+BCredits.Size = UDim2.new(0, 219, 0, 46)
+BCredits.Font = Enum.Font.SourceSansBold
+BCredits.Text = "Credits"
+BCredits.TextColor3 = Color3.fromRGB(255, 255, 255)
+BCredits.TextSize = 27.000
+
+Line_3.Name = "Line"
+Line_3.Parent = BCredits
+Line_3.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Line_3.BorderColor3 = Color3.fromRGB(40, 40, 40)
+Line_3.Position = UDim2.new(0, 0, 1, 0)
+Line_3.Size = UDim2.new(0, 220, 0, 0)
+
+Scripts.Name = "Scripts"
+Scripts.Parent = Tabs
+Scripts.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+Scripts.BorderColor3 = Color3.fromRGB(27, 27, 27)
+Scripts.Position = UDim2.new(1.00314856, 0, 0, 0)
+Scripts.Size = UDim2.new(0, 636, 0, 420)
+Scripts.Visible = false
+
+ScriptsScroll.Name = "ScriptsScroll"
+ScriptsScroll.Parent = Scripts
+ScriptsScroll.Active = true
+ScriptsScroll.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+ScriptsScroll.BorderColor3 = Color3.fromRGB(27, 27, 27)
+ScriptsScroll.Position = UDim2.new(-0.00157232699, 0, 0, 0)
+ScriptsScroll.Size = UDim2.new(0, 636, 0, 420)
+ScriptsScroll.CanvasPosition = Vector2.new(0, 120)
+ScriptsScroll.ScrollBarThickness = 8
+
+ScriptsImag.Name = "ScriptsImag"
+ScriptsImag.Parent = ScriptsScroll
+ScriptsImag.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScriptsImag.BackgroundTransparency = 1.000
+ScriptsImag.Position = UDim2.new(0.0172955971, 0, 0.0464285761, 0)
+ScriptsImag.Size = UDim2.new(0, 613, 0, 206)
+ScriptsImag.Image = "rbxassetid://9134978873"
+
+WELCOME_2.Name = "WELCOME"
+WELCOME_2.Parent = ScriptsImag
+WELCOME_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WELCOME_2.BackgroundTransparency = 1.000
+WELCOME_2.Position = UDim2.new(0.00978792831, 0, 0.378640771, 0)
+WELCOME_2.Size = UDim2.new(0, 200, 0, 50)
+WELCOME_2.Font = Enum.Font.SourceSansBold
+WELCOME_2.Text = "Welcome,"
+WELCOME_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+WELCOME_2.TextSize = 50.000
+
+toconvsec.Name = "toconvsec"
+toconvsec.Parent = ScriptsImag
+toconvsec.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+toconvsec.BackgroundTransparency = 1.000
+toconvsec.Position = UDim2.new(0.283849925, 0, 0.640776753, 0)
+toconvsec.Size = UDim2.new(0, 200, 0, 50)
+toconvsec.Font = Enum.Font.SourceSansBold
+toconvsec.Text = "To Converts Section"
+toconvsec.TextColor3 = Color3.fromRGB(255, 255, 255)
+toconvsec.TextSize = 75.000
+
+Overworld_3.Name = "Overworld"
+Overworld_3.Parent = ScriptsScroll
+Overworld_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Overworld_3.BackgroundTransparency = 1.000
+Overworld_3.Position = UDim2.new(-0.023584906, 0, -0.00952380989, 0)
+Overworld_3.Size = UDim2.new(0, 200, 0, 50)
+Overworld_3.Font = Enum.Font.SourceSansBold
+Overworld_3.Text = "Overworld "
+Overworld_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+Overworld_3.TextSize = 35.000
+
+Scripts_2.Name = "Scripts"
+Scripts_2.Parent = ScriptsScroll
+Scripts_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Scripts_2.BackgroundTransparency = 1.000
+Scripts_2.Position = UDim2.new(0.732704401, 0, -0.010714286, 0)
+Scripts_2.Size = UDim2.new(0, 200, 0, 50)
+Scripts_2.Font = Enum.Font.SourceSansBold
+Scripts_2.Text = "Scripts"
+Scripts_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Scripts_2.TextSize = 45.000
+
+Beta.Name = "Beta"
+Beta.Parent = ScriptsScroll
+Beta.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Beta.BackgroundTransparency = 1.000
+Beta.Position = UDim2.new(0.141509444, 0, -0.010714286, 0)
+Beta.Size = UDim2.new(0, 200, 0, 50)
+Beta.Font = Enum.Font.SciFi
+Beta.Text = "Beta"
+Beta.TextColor3 = Color3.fromRGB(255, 255, 255)
+Beta.TextSize = 35.000
+
+ReanimateF_2.Name = "ReanimateF"
+ReanimateF_2.Parent = ScriptsScroll
+ReanimateF_2.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+ReanimateF_2.BorderColor3 = Color3.fromRGB(20, 20, 20)
+ReanimateF_2.Position = UDim2.new(0.0157232694, 0, 0.300000072, 0)
+ReanimateF_2.Size = UDim2.new(0, 613, 0, 37)
+
+LowerF.Name = "LowerF"
+LowerF.Parent = ReanimateF_2
+LowerF.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+LowerF.BorderColor3 = Color3.fromRGB(30, 30, 30)
+LowerF.Position = UDim2.new(0.00104138069, 0, 0.975675821, 0)
+LowerF.Size = UDim2.new(0, 613, 0, 45)
+
+Description.Name = "Description"
+Description.Parent = LowerF
+Description.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Description.BackgroundTransparency = 1.000
+Description.Position = UDim2.new(0.0619902015, 0, -0.130330384, 0)
+Description.Size = UDim2.new(0, 200, 0, 50)
+Description.Font = Enum.Font.SourceSans
+Description.Text = "Replicates ur animations"
+Description.TextColor3 = Color3.fromRGB(255, 255, 255)
+Description.TextSize = 30.000
+
+Execute.Name = "Execute"
+Execute.Parent = LowerF
+Execute.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+Execute.BorderColor3 = Color3.fromRGB(20, 20, 20)
+Execute.Position = UDim2.new(0.660685182, 0, 0.153333202, 0)
+Execute.Size = UDim2.new(0, 200, 0, 31)
+Execute.Font = Enum.Font.SourceSansBold
+Execute.Text = "Execute"
+Execute.TextColor3 = Color3.fromRGB(255, 255, 255)
+Execute.TextSize = 25.000
+
+Name.Name = "Name"
+Name.Parent = ReanimateF_2
+Name.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Name.BackgroundTransparency = 1.000
+Name.Position = UDim2.new(-0.0146818925, 0, -0.243243247, 0)
+Name.Size = UDim2.new(0, 200, 0, 50)
+Name.Font = Enum.Font.SourceSansBold
+Name.Text = "Reanimate"
+Name.TextColor3 = Color3.fromRGB(255, 255, 255)
+Name.TextSize = 40.000
+
+Desc.Name = "Desc"
+Desc.Parent = ReanimateF_2
+Desc.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Desc.BackgroundTransparency = 1.000
+Desc.Position = UDim2.new(0.336052179, 0, -0.189189196, 0)
+Desc.Size = UDim2.new(0, 200, 0, 50)
+Desc.Font = Enum.Font.SourceSans
+Desc.Text = "Overworld Reanimation."
+Desc.TextColor3 = Color3.fromRGB(255, 255, 255)
+Desc.TextSize = 30.000
+
+WARNING.Name = "WARNING"
+WARNING.Parent = ScriptsScroll
+WARNING.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WARNING.BackgroundTransparency = 1.000
+WARNING.Position = UDim2.new(-0.0626981407, 0, 0.38726306, 0)
+WARNING.Size = UDim2.new(0, 200, 0, 50)
+WARNING.Font = Enum.Font.SourceSansBold
+WARNING.Text = "Warning"
+WARNING.TextColor3 = Color3.fromRGB(255, 255, 255)
+WARNING.TextSize = 30.000
+
+WARNF.Name = "WARNF"
+WARNF.Parent = WARNING
+WARNF.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+WARNF.BorderColor3 = Color3.fromRGB(27, 42, 5334)
+WARNF.Position = UDim2.new(0.25, 0, 0.839999974, 0)
+WARNF.Size = UDim2.new(0, 600, 0, 65)
+
+UICorner_8.CornerRadius = UDim.new(0.0700000003, 0)
+UICorner_8.Parent = WARNF
+
+WARNTXT.Name = "WARNTXT"
+WARNTXT.Parent = WARNF
+WARNTXT.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WARNTXT.BackgroundTransparency = 1.000
+WARNTXT.Position = UDim2.new(0.00232279464, 0, -5.25841351e-05, 0)
+WARNTXT.Size = UDim2.new(0, 598, 0, 57)
+WARNTXT.Font = Enum.Font.SourceSans
+WARNTXT.Text = "The reanimation Only Works with R6 And don't execute any script after reanimating when u click on a script it should auto-reanimate."
+WARNTXT.TextColor3 = Color3.fromRGB(255, 255, 255)
+WARNTXT.TextScaled = true
+WARNTXT.TextSize = 30.000
+WARNTXT.TextWrapped = true
+
+Credits.Name = "Credits"
+Credits.Parent = Tabs
+Credits.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+Credits.BorderColor3 = Color3.fromRGB(27, 27, 27)
+Credits.Position = UDim2.new(1.00314856, 0, 0, 0)
+Credits.Size = UDim2.new(0, 636, 0, 420)
+Credits.Visible = false
+
+CreditsScroll.Name = "CreditsScroll"
+CreditsScroll.Parent = Credits
+CreditsScroll.Active = true
+CreditsScroll.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+CreditsScroll.BorderColor3 = Color3.fromRGB(27, 27, 27)
+CreditsScroll.Position = UDim2.new(-0.00157232699, 0, 0, 0)
+CreditsScroll.Size = UDim2.new(0, 636, 0, 420)
+CreditsScroll.ScrollBarThickness = 8
+
+CreditsImag.Name = "CreditsImag"
+CreditsImag.Parent = CreditsScroll
+CreditsImag.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CreditsImag.BackgroundTransparency = 1.000
+CreditsImag.Position = UDim2.new(0.0172955971, 0, 0.0500000007, 0)
+CreditsImag.Size = UDim2.new(0, 613, 0, 226)
+CreditsImag.Image = "rbxassetid://9171816480"
+
+Overworld_4.Name = "Overworld"
+Overworld_4.Parent = CreditsScroll
+Overworld_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Overworld_4.BackgroundTransparency = 1.000
+Overworld_4.Position = UDim2.new(-0.023584906, 0, -0.00952380989, 0)
+Overworld_4.Size = UDim2.new(0, 200, 0, 50)
+Overworld_4.Font = Enum.Font.SourceSansBold
+Overworld_4.Text = "Overworld "
+Overworld_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+Overworld_4.TextSize = 35.000
+
+Credits_2.Name = "Credits"
+Credits_2.Parent = CreditsScroll
+Credits_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Credits_2.BackgroundTransparency = 1.000
+Credits_2.Position = UDim2.new(0.732704401, 0, -0.010714286, 0)
+Credits_2.Size = UDim2.new(0, 200, 0, 50)
+Credits_2.Font = Enum.Font.SourceSansBold
+Credits_2.Text = "Credits"
+Credits_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Credits_2.TextSize = 45.000
+
+Beta_2.Name = "Beta"
+Beta_2.Parent = CreditsScroll
+Beta_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Beta_2.BackgroundTransparency = 1.000
+Beta_2.Position = UDim2.new(0.141509444, 0, -0.010714286, 0)
+Beta_2.Size = UDim2.new(0, 200, 0, 50)
+Beta_2.Font = Enum.Font.SciFi
+Beta_2.Text = "Beta"
+Beta_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Beta_2.TextSize = 35.000
+
+Credits_3.Name = "Credits"
+Credits_3.Parent = CreditsScroll
+Credits_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Credits_3.BackgroundTransparency = 1.000
+Credits_3.Position = UDim2.new(-0.0548365116, 0, 0.313453555, 0)
+Credits_3.Size = UDim2.new(0, 200, 0, 50)
+Credits_3.Font = Enum.Font.SourceSansBold
+Credits_3.Text = "Credits"
+Credits_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+Credits_3.TextSize = 40.000
+
+CreditsF.Name = "CreditsF"
+CreditsF.Parent = Credits_3
+CreditsF.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+CreditsF.BorderColor3 = Color3.fromRGB(27, 42, 5334)
+CreditsF.Position = UDim2.new(0.230216369, 0, 0.89398098, 0)
+CreditsF.Size = UDim2.new(0, 611, 0, 43)
+
+CreditsTXT.Name = "CreditsTXT"
+CreditsTXT.Parent = CreditsF
+CreditsTXT.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CreditsTXT.BackgroundTransparency = 1.000
+CreditsTXT.Position = UDim2.new(0.00226274505, 0, -0.166719675, 0)
+CreditsTXT.Size = UDim2.new(0, 612, 0, 57)
+CreditsTXT.Font = Enum.Font.SourceSans
+CreditsTXT.Text = "All Credits of Overworld Hub will be Displayed Here."
+CreditsTXT.TextColor3 = Color3.fromRGB(255, 255, 255)
+CreditsTXT.TextScaled = true
+CreditsTXT.TextSize = 30.000
+CreditsTXT.TextWrapped = true
+
+UICorner_9.Parent = CreditsF
+
+CreditsFrame.Name = "Credits Frame"
+CreditsFrame.Parent = CreditsScroll
+CreditsFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+CreditsFrame.Position = UDim2.new(0.0172955971, 0, 0.426190704, 0)
+CreditsFrame.Size = UDim2.new(0, 222, 0, 310)
+
+Credits_4.Name = "Credits"
+Credits_4.Parent = CreditsFrame
+Credits_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Credits_4.BackgroundTransparency = 1.000
+Credits_4.Position = UDim2.new(0.0347968042, 0, -0.0296188593, 0)
+Credits_4.Size = UDim2.new(0, 191, 0, 341)
+Credits_4.Font = Enum.Font.SourceSans
+Credits_4.Text = "Credits:\\nCharlie - Help With Reanimation\\nEmper - Hub UI, Reanim, Converts\\n\\n"
+Credits_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+Credits_4.TextScaled = true
+Credits_4.TextSize = 14.000
+Credits_4.TextWrapped = true
+
+UICorner_10.Parent = CreditsFrame
+
+CreditsFrame_2.Name = "Credits Frame"
+CreditsFrame_2.Parent = CreditsScroll
+CreditsFrame_2.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+CreditsFrame_2.Position = UDim2.new(0.388364792, 0, 0.46309945, 0)
+CreditsFrame_2.Size = UDim2.new(0, 375, 0, 281)
+
+Credits_5.Name = "Credits"
+Credits_5.Parent = CreditsFrame_2
+Credits_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Credits_5.BackgroundTransparency = 1.000
+Credits_5.Position = UDim2.new(-0.193503171, 0, -0.166973501, 0)
+Credits_5.Size = UDim2.new(0, 200, 0, 50)
+Credits_5.Font = Enum.Font.SourceSansBold
+Credits_5.Text = "You"
+Credits_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+Credits_5.TextSize = 40.000
+
+Credits_6.Name = "Credits"
+Credits_6.Parent = CreditsFrame_2
+Credits_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Credits_6.BackgroundTransparency = 1.000
+Credits_6.Position = UDim2.new(0.0454633795, 0, 0.00952702295, 0)
+Credits_6.Size = UDim2.new(0, 340, 0, 295)
+Credits_6.Font = Enum.Font.SourceSans
+Credits_6.Text = "If there is someone we have to credit, that one is You! Yes u heard right, we are very grateful that ur supporting and using Overworld Hub."
+Credits_6.TextColor3 = Color3.fromRGB(255, 255, 255)
+Credits_6.TextScaled = true
+Credits_6.TextSize = 14.000
+Credits_6.TextWrapped = true
+
+UICorner_11.Parent = CreditsFrame_2
+
+-- Scripts:
+
+local function BHWA_fake_script() -- DragFrame.Dragify 
+	local script = Instance.new('LocalScript', DragFrame)
+
+	local UIS = game:GetService('UserInputService')
+	local frame = script.Parent
+	local dragToggle = nil
+	local dragSpeed = 0.25
+	local dragStart = nil
+	local startPos = nil
+	
+	local function updateInput(input)
+		local delta = input.Position - dragStart
+		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+	end
+	
+	frame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+			dragToggle = true
+			dragStart = input.Position
+			startPos = frame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle = false
+				end
+			end)
+		end
+	end)
+	
+	UIS.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			if dragToggle then
+				updateInput(input)
+			end
+		end
+	end)
+end
+coroutine.wrap(BHWA_fake_script)()
+local function QFHQ_fake_script() -- PlayerName.PNScript 
+	local script = Instance.new('LocalScript', PlayerName)
+
+	local Plr = game.Players.LocalPlayer
+	
+	if Plr then 
+		script.Parent.Text = Plr.Name
+	end
+end
+coroutine.wrap(QFHQ_fake_script)()
+local function MNOOAXO_fake_script() -- PlayerAV.AVScript 
+	local script = Instance.new('LocalScript', PlayerAV)
+
+	local Players = game:GetService("Players")
+	
+	local player = Players.LocalPlayer
+	
+	local userId = player.UserId
+	local thumbType = Enum.ThumbnailType.HeadShot
+	local thumbSize = Enum.ThumbnailSize.Size420x420
+	local content, isReady = Players:GetUserThumbnailAsync(userId, thumbType, thumbSize)
+	
+	local imageLabel = script.Parent
+	imageLabel.Image = content
+end
+coroutine.wrap(MNOOAXO_fake_script)()
+local function MXSLUCX_fake_script() -- PlayerName_2.PNScript 
+	local script = Instance.new('LocalScript', PlayerName_2)
+
+	local Plr = game.Players.LocalPlayer
+	
+	if Plr then 
+		script.Parent.Text = Plr.Name
+	end
+end
+coroutine.wrap(MXSLUCX_fake_script)()
+local function VCTP_fake_script() -- PlayerID.IDScript 
+	local script = Instance.new('LocalScript', PlayerID)
+
+	local Plr = game.Players.LocalPlayer.UserId
+	
+	if Plr then 
+		script.Parent.Text = Plr
+	end
+end
+coroutine.wrap(VCTP_fake_script)()
+local function GPHZ_fake_script() -- BHome.LocalScript 
+	local script = Instance.new('LocalScript', BHome)
+
+	script.Parent.MouseButton1Down:Connect(function()
+		script.Parent.Parent.Home.Visible = true
+		script.Parent.Parent.Scripts.Visible = false
+		script.Parent.Parent.Credits.Visible = false
+	end)
+end
+coroutine.wrap(GPHZ_fake_script)()
+local function FUMXMZ_fake_script() -- BScripts.LocalScript 
+	local script = Instance.new('LocalScript', BScripts)
+
+	script.Parent.MouseButton1Down:Connect(function()
+		script.Parent.Parent.Home.Visible = false
+		script.Parent.Parent.Scripts.Visible = true
+		script.Parent.Parent.Credits.Visible = false
+	end)
+end
+coroutine.wrap(FUMXMZ_fake_script)()
+local function IXLKBRA_fake_script() -- BCredits.LocalScript 
+	local script = Instance.new('LocalScript', BCredits)
+
+	script.Parent.MouseButton1Down:Connect(function()
+		script.Parent.Parent.Home.Visible = false
+		script.Parent.Parent.Scripts.Visible = false
+		script.Parent.Parent.Credits.Visible = true
+	end)
+end
+coroutine.wrap(IXLKBRA_fake_script)()
+local function JVTC_fake_script() -- Execute.REANScript 
+	local script = Instance.new('LocalScript', Execute)
+
+	script.Parent.MouseButton1Down:Connect(function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/Empereanor/Overworld-Hub/main/Overworld%20Reanimation'))()
+	end)
+end
+coroutine.wrap(JVTC_fake_script)()
